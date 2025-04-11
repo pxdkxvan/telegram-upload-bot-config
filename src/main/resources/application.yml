@@ -1,0 +1,23 @@
+server:
+  port: ${CONFIG_PORT}
+
+encrypt:
+  key: ${CONFIG_ENCRYPT_KEY}
+
+spring:
+
+  application:
+    name: ${CONFIG_NAME}
+
+  profiles:
+    active:
+      - actuator
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${GIT_CONFIG_SERVER}
+          default-label: ${GIT_BRANCH}
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
